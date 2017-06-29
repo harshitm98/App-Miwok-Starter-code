@@ -3,22 +3,26 @@
     xmlns:tools="http://schemas.android.com/tools"
     android:orientation="horizontal" android:layout_width="match_parent"
     android:layout_height="match_parent"
-    android:layout_marginLeft="16dp"
-
-    android:layout_marginBottom="16dp">
+    android:minHeight="@dimen/list_item_height"
+    android:background="@color/category_numbers"
+    >
 
     <ImageView
         android:layout_width="wrap_content"
+        android:id="@+id/miwok_image"
         android:layout_height="wrap_content"
-        android:src="@mipmap/ic_launcher"
-        android:layout_marginTop="16dp"
-        android:layout_marginRight="16dp"/>
+        tools:src="@mipmap/ic_launcher"
+        android:background="#FFFFFF"
+        android:layout_centerVertical="true"
+
+        />
 
 
     <LinearLayout
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:orientation="vertical">
+        android:orientation="vertical"
+        android:layout_marginLeft="16dp">
 
         <TextView
             android:layout_width="wrap_content"
