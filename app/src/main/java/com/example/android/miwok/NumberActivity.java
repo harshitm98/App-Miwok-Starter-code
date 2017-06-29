@@ -17,30 +17,18 @@ public class NumberActivity extends AppCompatActivity {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_number);
 
-//        String[] words = new String[10];
-//        words[0] = "One";
-//        words[1] = "Two";
-//        words[2] = "Three";
-//        words[3] = "Four";
-//        words[4] = "Five";
-//        words[5] = "Six";
-//        words[6] = "Seven";
-//        words[7] = "Eight";
-//        words[8] = "Nine";
-//        words[9] = "Ten";
-
         ArrayList<Word> words = new ArrayList<Word>();
 
-        words.add(new Word("One", "Ek"));
-        words.add(new Word("Two", "Do"));
-        words.add(new Word("Three", "Teen"));
-        words.add(new Word("Four", "Chaar"));
-        words.add(new Word("Five", "Paanch"));
-        words.add(new Word("Six", "Che"));
-        words.add(new Word("Seven", "Saath"));
-        words.add(new Word("Eight", "Aat"));
-        words.add(new Word("Nine", "No"));
-        words.add(new Word("Ten","Das"));
+        words.add(new Word("One", "lutti"));
+        words.add(new Word("Two", "otiiko"));
+        words.add(new Word("Three", "tolookosu"));
+        words.add(new Word("Four", "oyyisa"));
+        words.add(new Word("Five", "massokka"));
+        words.add(new Word("Six", "temmokka"));
+        words.add(new Word("Seven", "kenekaku"));
+        words.add(new Word("Eight", "kawinta"));
+        words.add(new Word("Nine", "wo’e"));
+        words.add(new Word("Ten","na’aacha"));
 
         WordAdapter itemsAdapter = new WordAdapter(this,words);
         ListView listView = (ListView) findViewById(R.id.list);
