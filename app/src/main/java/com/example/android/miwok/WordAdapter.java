@@ -2,11 +2,14 @@ package com.example.android.miwok;
 
 import android.app.Activity;
 import android.content.Context;
+import android.support.v4.content.ContextCompat;
+import android.text.style.BackgroundColorSpan;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
 import android.widget.ArrayAdapter;
 import android.widget.ImageView;
+import android.widget.LinearLayout;
 import android.widget.TextView;
 
 import java.util.ArrayList;
@@ -17,8 +20,11 @@ import java.util.List;
  */
 public class WordAdapter extends ArrayAdapter<Word> {
 
-    public WordAdapter(Activity context, ArrayList<Word> objects) {
+    private int mBackgroundColorId;
+
+    public WordAdapter(Activity context, ArrayList<Word> objects, int vBackgroundColorId) {
         super(context, 0, objects);
+        mBackgroundColorId = vBackgroundColorId;
     }
 
     @Override
@@ -53,6 +59,11 @@ public class WordAdapter extends ArrayAdapter<Word> {
         else{
             miwokImage.setVisibility(View.GONE);
         }
+
+        View textContainer = listItemView.findViewById(R.id.layout_item);
+        int color = ContextCompat.getColor(getContext(), mBackgroundColorId);
+        textContainer.setBackgroundColor(color);
+
         return listItemView;
     }
 }
