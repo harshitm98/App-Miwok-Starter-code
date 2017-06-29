@@ -29,20 +29,20 @@ public class NumberActivity extends AppCompatActivity {
 //        words[8] = "Nine";
 //        words[9] = "Ten";
 
-        ArrayList<String> words = new ArrayList<String>();
+        ArrayList<Word> words = new ArrayList<Word>();
 
-        words.add("One");
-        words.add("Two");
-        words.add("Three");
-        words.add("Four");
-        words.add("Five");
-        words.add("Six");
-        words.add("Seven");
-        words.add("Eight");
-        words.add("Nine");
-        words.add("Ten");
+        words.add(new Word("One", "Ek"));
+        words.add(new Word("Two", "Do"));
+        words.add(new Word("Three", "Teen"));
+        words.add(new Word("Four", "Chaar"));
+        words.add(new Word("Five", "Paanch"));
+        words.add(new Word("Six", "Che"));
+        words.add(new Word("Seven", "Saath"));
+        words.add(new Word("Eight", "Aat"));
+        words.add(new Word("Nine", "No"));
+        words.add(new Word("Ten","Das"));
 
-        ArrayAdapter<String> itemsAdapter = new ArrayAdapter<String>(this,R.layout.list_item,words);
+        WordAdapter itemsAdapter = new WordAdapter(this,words);
         ListView listView = (ListView) findViewById(R.id.list);
         listView.setAdapter(itemsAdapter);
     }
