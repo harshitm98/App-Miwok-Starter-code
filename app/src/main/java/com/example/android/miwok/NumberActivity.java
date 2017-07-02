@@ -1,5 +1,6 @@
 package com.example.android.miwok;
 
+import android.media.MediaPlayer;
 import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
 import android.view.View;
@@ -16,7 +17,7 @@ public class NumberActivity extends AppCompatActivity {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.list_layout);
 
-        ArrayList<Word> words = new ArrayList<Word>();
+        final ArrayList<Word> words = new ArrayList<Word>();
 
         words.add(new Word("One", "lutti", R.drawable.number_one,R.raw.number_one));
         words.add(new Word("Two", "otiiko", R.drawable.number_two,R.raw.number_two));
@@ -36,7 +37,17 @@ public class NumberActivity extends AppCompatActivity {
         listView.setOnItemClickListener(new AdapterView.OnItemClickListener() {
             @Override
             public void onItemClick(AdapterView<?> adapterView, View view, int i, long l) {
-                Toast.makeText(NumberActivity.this, "Check", Toast.LENGTH_SHORT).show();
+
+                Word audio = words.get(i); // i is the position of the adapterView(Here wordAdapter). That sends this to display on ListView
+                int audioId = audio.getAudio();
+
+                String ass = audio.getMiwokTranslation();
+
+                final MediaPlayer md = MediaPlayer.create(NumberActivity.this,audioId);
+                Toast.makeText(NumberActivity.this,"Pronouncing " + ass,Toast.LENGTH_SHORT).show();
+                md.start();
+
+                
             }
         });
     }
