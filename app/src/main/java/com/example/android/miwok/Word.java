@@ -13,19 +13,23 @@ public class Word {
 
     private final static int NO_IMAGE_PROVIDED = -1;
 
-    public Word(String vEnglishName, String vMiwokName, int vImageId){
+    private int mAudio;
+
+    public Word(String vEnglishName, String vMiwokName, int vImageId, int vAudio){
         mMiwokName = vMiwokName;
         mEnglishName = vEnglishName;
         mImageId = vImageId;
+        mAudio = vAudio;
     }
 
 
     /* Creating another constructor which takes two parameters as input
     *
     */
-    public Word(String vEnglishName, String vMiwokName){
+    public Word(String vEnglishName, String vMiwokName, int vAudio){
         mMiwokName = vMiwokName;
         mEnglishName = vEnglishName;
+        mAudio = vAudio;
     }
 
     public String getMiwokTranslation(){
@@ -40,6 +44,10 @@ public class Word {
 
     public boolean hasImage(){
         return mImageId != NO_IMAGE_PROVIDED;
+    }
+
+    public int getAudio(){
+        return mAudio;
     }
 
 }
