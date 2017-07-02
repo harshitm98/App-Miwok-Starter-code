@@ -82,5 +82,10 @@ public class NumberActivity extends AppCompatActivity {
         });
     }
 
-    
+    @Override
+    protected void onStop() {
+        super.onStop();
+        // Releases the mediaPlayer
+        releaseMediaPlayer();
+    }
 }
